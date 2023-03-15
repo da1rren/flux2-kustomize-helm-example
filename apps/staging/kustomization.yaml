@@ -4,5 +4,3 @@ namespace: podinfo
 resources:
   - ../base/podinfo
   - ../base/istio
-patchesStrategicMerge:
-  - podinfo-values.yaml
