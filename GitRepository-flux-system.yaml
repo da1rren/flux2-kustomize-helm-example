@@ -1,0 +1,69 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "2023-03-15T20:37:16.184922Z"
+  creationTimestamp: "2023-03-15T12:13:16Z"
+  finalizers:
+  - finalizers.fluxcd.io
+  generation: 1
+  labels:
+    kustomize.toolkit.fluxcd.io/name: flux-system
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+    toolkit.fluxcd.io/tenant: sre-team
+  name: flux-system
+  namespace: flux-system
+  resourceVersion: "9126"
+  uid: f8144359-4418-48cc-a5c1-c3b6188fcf6c
+spec:
+  gitImplementation: go-git
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: flux-system
+  timeout: 60s
+  url: https://github.com/da1rren/flux2-kustomize-helm-example.git
+status:
+  artifact:
+    checksum: f16d99eb7b18c1542bee1cc8481c14de39ffdd9ed7627f5e2d89f7e20fad2a59
+    digest: sha256:f16d99eb7b18c1542bee1cc8481c14de39ffdd9ed7627f5e2d89f7e20fad2a59
+    lastUpdateTime: "2023-03-15T12:13:38Z"
+    path: gitrepository/flux-system/flux-system/b72bbeba9355289974736d4f73d47f29b6a89405.tar.gz
+    revision: main@sha1:b72bbeba9355289974736d4f73d47f29b6a89405
+    size: 33852
+    url: http://source-controller.flux-system.svc.cluster.local./gitrepository/flux-system/flux-system/b72bbeba9355289974736d4f73d47f29b6a89405.tar.gz
+  conditions:
+  - lastTransitionTime: "2023-03-15T20:37:17Z"
+    message: reconciliation in progress
+    observedGeneration: 1
+    reason: ProgressingWithRetry
+    status: "True"
+    type: Reconciling
+  - lastTransitionTime: "2023-03-15T20:24:16Z"
+    message: 'failed to checkout and determine revision: unable to list remote for
+      ''ssh://git@github.com/da1rren/flux2-kustomize-helm-example'': ssh: handshake
+      failed: ssh: unable to authenticate, attempted methods [none publickey], no
+      supported methods remain'
+    observedGeneration: 1
+    reason: GitOperationFailed
+    status: "False"
+    type: Ready
+  - lastTransitionTime: "2023-03-15T12:13:38Z"
+    message: stored artifact for revision 'main@sha1:b72bbeba9355289974736d4f73d47f29b6a89405'
+    observedGeneration: 1
+    reason: Succeeded
+    status: "True"
+    type: ArtifactInStorage
+  - lastTransitionTime: "2023-03-15T20:24:16Z"
+    message: 'failed to checkout and determine revision: unable to list remote for
+      ''ssh://git@github.com/da1rren/flux2-kustomize-helm-example'': ssh: handshake
+      failed: ssh: unable to authenticate, attempted methods [none publickey], no
+      supported methods remain'
+    observedGeneration: 1
+    reason: GitOperationFailed
+    status: "True"
+    type: FetchFailed
+  lastHandledReconcileAt: "2023-03-15T20:37:16.184922Z"
+  observedGeneration: 1
+  url: http://source-controller.flux-system.svc.cluster.local./gitrepository/flux-system/flux-system/latest.tar.gz
